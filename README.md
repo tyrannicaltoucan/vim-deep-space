@@ -24,7 +24,5 @@ Then simply add `colorscheme deep-space` to your `.vimrc` file. You can also tes
 - [ ] Options for enabling/disabling italic and bold fonts.
 - [ ] Better language support.
 
-An [Atom](https://atom.io) version of this color scheme can be found [here](https://github.com/tyrannicaltoucan/deep-space-syntax).
-
 ---
 © 2016 tyrannicaltoucan under the X11/MIT License
