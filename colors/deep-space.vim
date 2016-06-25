@@ -13,31 +13,35 @@ endif
 
 set background=dark
 
+let t_Co = 256
 let colors_name = "deep_space"
 
 " Color Definitions
-let s:black         = "#1b202a"
-let s:visual_gray   = "#2a3341"
-let s:cursor_blue   = "#599dff"
-let s:light_gray    = "#9aa7bd"
-let s:dark_gray     = "#323c4d"
-let s:mid_gray      = "#607395"
-let s:white         = "#c9d0dc"
+let s:black         = ["#1b202a", 234]
+let s:visual_gray   = ["#2a3341", 236]
+let s:dark_gray     = ["#323c4d", 237]
+let s:mid_gray      = ["#51617d", 243]
+let s:light_gray    = ["#9aa7bd", 248]
+let s:white         = ["#c9d0dc", 252]
 
-let s:red           = "#b15e7c"
-let s:green         = "#709d6c"
-let s:yellow        = "#b5a262"
-let s:blue          = "#608cc3"
-let s:purple        = "#8f72bf"
-let s:cyan          = "#56adb7"
-let s:pink          = "#ca8bba"
-let s:orange        = "#b3785d"
+let s:red           = ["#b15e7c", 132]
+let s:green         = ["#709d6c", 65]
+let s:yellow        = ["#b5a262", 143]
+let s:blue          = ["#608cc3", 67]
+let s:purple        = ["#8f72bf", 97]
+let s:cyan          = ["#56adb7", 73]
+let s:pink          = ["#ca8bba", 175]
+let s:orange        = ["#b3785d", 137]
+let s:cursor_blue   = ["#599dff", 75]
 
-let s:none          = "NONE"
+let s:none          = ["NONE", "NONE"]
 
 function! s:HL(group, fg, bg, ...)
-    execute 'hi!' a:group 'guifg='a:fg 'guibg='a:bg
-                \ 'gui='.(a:0 > 0 ? get(a:1, 'gui', 'NONE'): 'NONE')
+    execute 'hi!' a:group 'ctermfg='.a:fg[1] 'ctermbg='.a:bg[1]
+                \ 'cterm='.(a:0 > 0 ? get(a:1,'cterm','NONE'):'NONE')
+                \ 'guifg='.a:fg[0] 'guibg='a:bg[0]
+                \ 'gui='.(a:0 > 0 ? get(a:1,'gui','NONE'):'NONE')
+                \ 'guisp='.(a:0 > 0 ? get(a:1,'guisp','NONE'):'NONE')
 endfun
 
 " Text
@@ -74,10 +78,10 @@ call s:HL("SpecialChar",    s:red,          s:none)
 call s:HL("Tag",            s:blue,         s:none)
 call s:HL("Delimiter",      s:cyan,         s:none)
 call s:HL("SpecialComment", s:light_gray,   s:none)
-call s:HL("Underlined",     s:none,         s:none,         {'gui': 'underline'})
+call s:HL("Underlined",     s:none,         s:none,         {'cterm': 'underline',     'gui': 'underline'})
 call s:HL("Ignore",         s:light_gray,   s:none)
-call s:HL("Error",          s:red,          s:none,         {'gui': 'bold'})
-call s:HL("Todo",           s:pink,         s:none,         {'gui': 'bolditalic'})
+call s:HL("Error",          s:red,          s:none,         {'cterm': 'bold',          'gui': 'bold'})
+call s:HL("Todo",           s:pink,         s:none,         {'cterm': 'bold',          'gui': 'bolditalic'})
 
 " Editor styling
 call s:HL("ColorColumn",    s:none,         s:visual_gray)
@@ -90,16 +94,16 @@ call s:HL("DiffChange",     s:black,        s:yellow)
 call s:HL("DiffDelete",     s:black,        s:red)
 call s:HL("DiffText",       s:black,        s:blue)
 call s:HL("Directory",      s:blue,         s:none)
-call s:HL("Error",          s:red,          s:none,         {'gui': 'underline'})
-call s:HL("ErrorMsg",       s:red,          s:none,         {'gui': 'bold'})
+call s:HL("Error",          s:red,          s:none,         {'cterm': 'underline',     'gui': 'underline'})
+call s:HL("ErrorMsg",       s:red,          s:none,         {'cterm': 'bold',          'gui': 'bold'})
 call s:HL("Folded",         s:mid_gray,     s:black)
 call s:HL("FoldColumn",     s:light_gray,   s:none)
 call s:HL("IncSearch",      s:black,        s:light_gray)
 call s:HL("LineNr",         s:dark_gray,    s:none)
-call s:HL("MatchParen",     s:cursor_blue,  s:none,         {'gui': 'underline'})
+call s:HL("MatchParen",     s:black,        s:pink,         {'cterm': 'bold',          'gui': 'bold'})
 call s:HL("ModeMsg",        s:green,        s:none)
 call s:HL("MoreMsg",        s:green,        s:none)
-call s:HL("NonText",        s:dark_gray,    s:none)
+call s:HL("NonText",        s:mid_gray,     s:none)
 call s:HL("Pmenu",          s:light_gray,   s:dark_gray)
 call s:HL("PmenuSbar",      s:mid_gray,     s:light_gray)
 call s:HL("PmenuSel",       s:black,        s:cursor_blue)
@@ -107,18 +111,18 @@ call s:HL("PmenuThumb",     s:light_gray,   s:white)
 call s:HL("Question",       s:yellow,       s:black)
 call s:HL("Search",         s:black,        s:yellow)
 call s:HL("SpecialKey",     s:mid_gray,     s:none)
-call s:HL("SpellBad",       s:red,          s:none,         {'gui': 'boldundercurl'})
-call s:HL("SpellCap",       s:blue,         s:none,         {'gui': 'boldundercurl'})
-call s:HL("SpellLocal",     s:cyan,         s:none,         {'gui': 'boldundercurl'})
-call s:HL("SpellRare",      s:purple,       s:none,         {'gui': 'boldundercurl'})
+call s:HL("SpellBad",       s:red,          s:none,         {'cterm': 'underline',     'gui': 'boldundercurl'})
+call s:HL("SpellCap",       s:blue,         s:none,         {'cterm': 'underline',     'gui': 'boldundercurl'})
+call s:HL("SpellLocal",     s:cyan,         s:none,         {'cterm': 'underline',     'gui': 'boldundercurl'})
+call s:HL("SpellRare",      s:purple,       s:none,         {'cterm': 'underline',     'gui': 'boldundercurl'})
 call s:HL("StatusLine",     s:light_gray,   s:visual_gray)
 call s:HL("StatusLineNC",   s:black,        s:dark_gray)
 call s:HL("TabLine",        s:black,        s:light_gray)
-call s:HL("TabLineSel",     s:light_gray,   s:black,        {'gui': 'bold'})
-call s:HL("Title",          s:blue,         s:none,         {'gui': 'bold'})
+call s:HL("TabLineSel",     s:light_gray,   s:cursor_blue,  {'cterm': 'bold',          'gui': 'bold'})
+call s:HL("Title",          s:green,        s:none,         {'cterm': 'bold',          'gui': 'bold'})
 call s:HL("VertSplit",      s:mid_gray,     s:none)
 call s:HL("Visual",         s:mid_gray,     s:dark_gray)
-call s:HL("VisualNOS",      s:white,        s:none,         {'gui': 'boldunderline'})
+call s:HL("VisualNOS",      s:white,        s:none,         {'cterm': 'boldunderline', 'gui': 'boldunderline'})
 call s:HL("WarningMsg",     s:red,          s:none)
 call s:HL("WildMenu",       s:black,        s:cursor_blue)
 
@@ -153,7 +157,7 @@ call s:HL("cssSelectorOp2",         s:blue,        s:none)
 call s:HL("cssTagName",             s:blue,        s:none)
 
 " HTML Styling
-call s:HL("Title",                  s:light_gray,   s:none,        {'gui': 'bold'})
+call s:HL("Title",                  s:light_gray,   s:none,        {'cterm': 'bold',        'gui': 'bold'})
 call s:HL("htmlArg",                s:red,          s:none)
 call s:HL("htmlEndTag",             s:blue,         s:none)
 call s:HL("htmlH1",                 s:light_gray,   s:none)
