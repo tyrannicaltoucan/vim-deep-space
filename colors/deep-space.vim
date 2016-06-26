@@ -2,7 +2,7 @@
 " deep-space.vim -- An intergalactically friendly Vim theme.
 " Maintainer: Brandon Siders <tyrannicaltoucan@gmail.com>
 " License: MIT
-" Modifed: 23 June 2016
+" Modifed: 25 June 2016
 " -----------------------------------------------------------
 
 highlight clear
@@ -14,7 +14,7 @@ endif
 set background=dark
 
 let t_Co = 256
-let colors_name = "deep_space"
+let colors_name = "deep-space"
 
 " Color Definitions
 let s:black         = ["#1b202a", 234]
@@ -49,7 +49,7 @@ call s:HL("Normal",         s:light_gray,   s:black)
 
 " Base sytax styling
 call s:HL("Comment",        s:mid_gray,     s:none,         {"gui": "italic"})
-call s:HL("Constant",       s:cyan,         s:none)
+call s:HL("Constant",       s:red,          s:none)
 call s:HL("String",         s:green,        s:none)
 call s:HL("Character",      s:red,          s:none)
 call s:HL("Number",         s:red,          s:none)
@@ -73,7 +73,7 @@ call s:HL("Type",           s:orange,       s:none)
 call s:HL("StorageClass",   s:orange,       s:none)
 call s:HL("Structure",      s:orange,       s:none)
 call s:HL("Typedef",        s:blue,         s:none)
-call s:HL("Special",        s:yellow,       s:none)
+call s:HL("Special",        s:red,          s:none)
 call s:HL("SpecialChar",    s:red,          s:none)
 call s:HL("Tag",            s:blue,         s:none)
 call s:HL("Delimiter",      s:cyan,         s:none)
@@ -177,6 +177,7 @@ call s:HL("rubyEscape",                  s:red,         s:none)
 call s:HL("rubyFunction",                s:yellow,      s:none)
 call s:HL("rubyInterpolation",           s:green,       s:none)
 call s:HL("rubyInterpolationDelimiter",  s:pink,        s:none)
+call s:HL("rubyRegexpSpecial",           s:yellow,      s:none)
 call s:HL("rubyRegexp",                  s:cyan,        s:none)
 call s:HL("rubyRegexpDelimiter",         s:cyan,        s:none)
 call s:HL("rubyStringDelimiter",         s:green,       s:none)
