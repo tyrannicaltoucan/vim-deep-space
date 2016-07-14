@@ -2,7 +2,7 @@
 " deep-space.vim -- An intergalactically friendly Vim theme.
 " Maintainer: Brandon Siders <tyrannicaltoucan@gmail.com>
 " License: MIT
-" Modifed: 2 July 2016
+" Modifed: 13 July 2016
 " -----------------------------------------------------------
 
 highlight clear
@@ -15,6 +15,11 @@ set background=dark
 
 let t_Co = 256
 let colors_name = "deep-space"
+
+" Italics (not compatible with all terminals!)
+if !exists("g:deepspace_italics")
+    let g:deepspace_italics = 0
+endif
 
 " Color Definitions
 let s:black         = ["#1b202a", 234]
@@ -36,19 +41,25 @@ let s:cursor_blue   = ["#599dff", 75]
 
 let s:none          = ["NONE", "NONE"]
 
+" Highlight function
 function! s:HL(group, fg, bg, ...)
-    execute 'hi!' a:group 'ctermfg='.a:fg[1] 'ctermbg='.a:bg[1]
-                \ 'cterm='.(a:0 > 0 ? get(a:1,'cterm','NONE'):'NONE')
-                \ 'guifg='.a:fg[0] 'guibg='a:bg[0]
-                \ 'gui='.(a:0 > 0 ? get(a:1,'gui','NONE'):'NONE')
-                \ 'guisp='.(a:0 > 0 ? get(a:1,'guisp','NONE'):'NONE')
+    execute 'hi!' a:group
+                \ 'ctermfg=' .a:fg[1] 'ctermbg='.a:bg[1]
+                \ 'guifg='   .a:fg[0] 'guibg='.a:bg[0]
+                \ 'cterm='   .(a:0 > 0 ? get(a:1, 'cterm', 'NONE'): 'NONE')
+                \ 'gui='     .(a:0 > 0 ? get(a:1, 'gui', 'NONE'): 'NONE')
+                \ 'guisp='   .(a:0 > 0 ? get(a:1, 'guisp', 'NONE'): 'NONE')
 endfun
 
-" Text
-call s:HL("Normal",                     s:light_gray,       s:black)
+" General syntax
+if g:deepspace_italics == 1
+    call s:HL("Comment",                s:mid_gray,     s:none,             {'cterm': 'italic',     'gui': 'italic'})
+    call s:HL("Todo",                   s:pink,         s:none,             {'cterm': 'bolditalic', 'gui': 'bolditalic'})
+else
+    call s:HL("Comment",                s:mid_gray,     s:none)             {'gui': 'italic'}
+    call s:HL("Todo",                   s:pink,         s:none,             {'cterm': 'bold',       'gui': 'bolditalic'})
+endif
 
-" Basic sytax
-call s:HL("Comment",                    s:mid_gray,     s:none,             {"gui": "italic"})
 call s:HL("Constant",                   s:red,          s:none)
 call s:HL("String",                     s:green,        s:none)
 call s:HL("Character",                  s:red,          s:none)
@@ -81,7 +92,6 @@ call s:HL("SpecialComment",             s:light_gray,   s:none)
 call s:HL("Underlined",                 s:none,         s:none,             {'cterm': 'underline',  'gui': 'underline'})
 call s:HL("Ignore",                     s:light_gray,   s:none)
 call s:HL("Error",                      s:red,          s:none,             {'cterm': 'bold',       'gui': 'bold'})
-call s:HL("Todo",                       s:pink,         s:none,             {'cterm': 'bold',       'gui': 'bolditalic'})
 
 " Editor
 call s:HL("ColorColumn",                s:none,         s:visual_gray)
@@ -104,6 +114,7 @@ call s:HL("MatchParen",                 s:black,        s:pink,             {'ct
 call s:HL("ModeMsg",                    s:green,        s:none)
 call s:HL("MoreMsg",                    s:green,        s:none)
 call s:HL("NonText",                    s:mid_gray,     s:none)
+call s:HL("Normal",                     s:light_gray,   s:black)
 call s:HL("Pmenu",                      s:light_gray,   s:dark_gray)
 call s:HL("PmenuSbar",                  s:mid_gray,     s:light_gray)
 call s:HL("PmenuSel",                   s:black,        s:cursor_blue)
