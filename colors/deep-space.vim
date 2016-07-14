@@ -89,7 +89,7 @@ call s:HL("SpecialChar",                s:red,          s:none)
 call s:HL("Tag",                        s:blue,         s:none)
 call s:HL("Delimiter",                  s:cyan,         s:none)
 call s:HL("SpecialComment",             s:light_gray,   s:none)
-call s:HL("Underlined",                 s:none,         s:none,             {'cterm': 'underline',  'gui': 'underline'})
+call s:HL("Underlined",                 s:blue,         s:none,             {'cterm': 'underline',  'gui': 'underline'})
 call s:HL("Ignore",                     s:light_gray,   s:none)
 call s:HL("Error",                      s:red,          s:none,             {'cterm': 'bold',       'gui': 'bold'})
 
@@ -146,6 +146,7 @@ call s:HL("SignifySignDelete",          s:red,          s:none)
 hi link GitGutterAdd    SignifySignAdd
 hi link GitGutterChange SignifySignChange
 hi link GitGutterDelete SignifySignDelete
+call s:HL("GitGutterChangeDelete",      s:orange,       s:none)
 
 " Vim-Fugitive
 call s:HL("diffAdded",                  s:green,        s:none)
@@ -222,3 +223,24 @@ call s:HL("rubyRegexp",                 s:cyan,        s:none)
 call s:HL("rubyRegexpDelimiter",        s:cyan,        s:none)
 call s:HL("rubyStringDelimiter",        s:green,       s:none)
 call s:HL("rubySymbol",                 s:red,         s:none)
+
+" Git
+call s:HL("gitcommitUnmerged",          s:green,       s:none)
+call s:HL("gitcommitBranch",            s:orange,      s:none)
+call s:HL("gitcommitDiscardedType",     s:red,         s:none)
+call s:HL("gitcommitSelectedType",      s:green,       s:none)
+call s:HL("gitcommitHeader",            s:purple,      s:none)
+call s:HL("gitcommitUntrackedFile",     s:blue,        s:none)
+call s:HL("gitcommitDiscardedFile",     s:red,         s:none)
+call s:HL("gitcommitSelectedFile",      s:green,       s:none)
+call s:HL("gitcommitUnmergedFile",      s:yellow,      s:none)
+call s:HL("gitcommitFile",              s:cyan,        s:none)
+hi link gitcommitComment comment
+hi link gitcommitOnBranch comment
+hi link gitcommitNoBranch gitcommitBranch
+hi link gitcommitUntracked gitcommitComment
+hi link gitcommitDiscarded gitcommitComment
+hi link gitcommitSelected gitcommitComment
+hi link gitcommitDiscardedArrow gitcommitDiscardedFile
+hi link gitcommitSelectedArrow gitcommitSelectedFile
+hi link gitcommitUnmergedArrow gitcommitUnmergedFile
