@@ -22,7 +22,7 @@ colorscheme deep-space
 ## Options
 ### Italics
 If your terminal supports italics you can enter this into your `.vimrc`:
-```
+```vim
 let g:deepspace_italics = 1 " Enable terminal italics
 ```
 
