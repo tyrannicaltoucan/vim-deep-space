@@ -56,7 +56,7 @@ if g:deepspace_italics == 1
     call s:HL("Comment",                s:mid_gray,     s:none,             {'cterm': 'italic',     'gui': 'italic'})
     call s:HL("Todo",                   s:pink,         s:none,             {'cterm': 'bolditalic', 'gui': 'bolditalic'})
 else
-    call s:HL("Comment",                s:mid_gray,     s:none)             {'gui': 'italic'}
+    call s:HL("Comment",                s:mid_gray,     s:none,             {'gui': 'italic'})
     call s:HL("Todo",                   s:pink,         s:none,             {'cterm': 'bold',       'gui': 'bolditalic'})
 endif
 
