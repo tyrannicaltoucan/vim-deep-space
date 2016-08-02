@@ -1,5 +1,5 @@
 # deep-space.vim
-An intergalactically friendly color scheme loosely based off of [Hybrid]("https://github.com/w0ng/vim-hybrid"). Designed for GUI Vim and 24-bit ('true-color') terminals, but can fallback to 256 colors if necessary.
+An intergalactically friendly color scheme loosely based off of [Hybrid](https://github.com/w0ng/vim-hybrid). Designed for GUI Vim and 24-bit ('true-color') terminals, but can fallback to 256 colors if necessary.
 
 ![screenshot](https://raw.githubusercontent.com/tyrannicaltoucan/vim-deep-space/master/screenshot.png)
 
@@ -44,10 +44,6 @@ endif
 *Tested on macOS 10.11 with Neovim 0.1.4, Neovim 0.1.5 and Vim 7.4.1993*
 
 ---
-I also made Deep Space for [Atom](https://atom.io). You can find it [here](https://github.com/tyrannicaltoucan/deep-space-syntax).
-
-The font used in the screenshot is Input Mono. Get it [here](http://input.fontbureau.com).
-
 ```
 Copyright (c) 2016 tyrannicaltoucan.
 
@@ -69,3 +65,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+I also made Deep Space for [Atom](https://atom.io). You can find it [here](https://github.com/tyrannicaltoucan/deep-space-syntax).
+
+The font used in the screenshot is Input Mono. Get it [here](http://input.fontbureau.com).
