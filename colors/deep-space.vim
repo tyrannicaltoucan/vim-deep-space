@@ -2,7 +2,7 @@
 " Theme: deep-space
 " Author: Brandon Siders <tyrannicaltoucan@gmail.com>
 " License: MIT
-" Version: 1.0
+" Version: 1.1-pre
 " -----------------------------------------------------------
 
 highlight clear
@@ -21,7 +21,7 @@ if !exists('g:deepspace_italics')
 endif
 
 let s:gray0     = ['#1b202a', 234]
-let s:gray1     = ['#2a3341', 236]
+let s:gray1     = ['#232936', 235]
 let s:gray2     = ['#323c4d', 237]
 let s:gray3     = ['#51617d', 243]
 let s:gray4     = ['#9aa7bd', 248]
@@ -32,9 +32,9 @@ let s:yellow    = ['#b5a262', 143]
 let s:blue      = ['#608cc3', 67]
 let s:purple    = ['#8f72bf', 97]
 let s:cyan      = ['#56adb7', 73]
-let s:pink      = ['#ca8bba', 175]
+let s:pink      = ['#b4749e', 168]
 let s:orange    = ['#b3785d', 137]
-let s:neonblue  = ['#599dff', 75]
+let s:neonblue  = ['#73a2e5', 75]
 
 function! s:HL(group, fg, bg, attr)
     let l:attr = a:attr
