@@ -2,7 +2,7 @@
 " Theme: deep-space
 " Author: Brandon Siders <tyrannicaltoucan@gmail.com>
 " License: MIT
-" Version: 1.1-pre
+" Version: 1.1
 " -----------------------------------------------------------
 
 highlight clear
@@ -25,7 +25,6 @@ let s:gray1     = ['#232936', 235]
 let s:gray2     = ['#323c4d', 237]
 let s:gray3     = ['#51617d', 243]
 let s:gray4     = ['#9aa7bd', 248]
-let s:gray5     = ['#c9d0dc', 252]
 let s:red       = ['#b15e7c', 132]
 let s:green     = ['#709d6c', 65]
 let s:yellow    = ['#b5a262', 143]
@@ -71,7 +70,7 @@ call s:HL('Folded',                         s:gray1,    s:gray0,    '')
 call s:HL('FoldColumn',                     s:cyan,     s:gray0,    '')
 call s:HL('SignColumn',                     s:gray1,    s:gray0,    '')
 call s:HL('LineNr',                         s:gray2,    '',         '')
-call s:HL('CursorLineNr',                   s:gray5,    s:gray1,    'none')
+call s:HL('CursorLineNr',                   s:gray4,    s:gray1,    'none')
 call s:HL('MatchParen',                     s:gray1,    s:pink,     'bold')
 call s:HL('ModeMsg',                        s:green,    '',         '')
 call s:HL('MoreMsg',                        s:green,    '',         '')
@@ -79,8 +78,8 @@ call s:HL('NonText',                        s:gray3,    '',         '')
 call s:HL('Normal',                         s:gray4,    s:gray0,    'none')
 call s:HL('Pmenu',                          s:gray4,    s:gray2,    '')
 call s:HL('PmenuSel',                       s:gray0,    s:neonblue, '')
-call s:HL('PmenuSbar',                      s:gray3,    s:gray4,    '')
-call s:HL('PmenuThumb',                     s:gray4,    s:gray5,    '')
+call s:HL('PmenuSbar',                      s:gray2,    s:gray3,    '')
+call s:HL('PmenuThumb',                     s:gray3,    s:gray4,    '')
 call s:HL('Question',                       s:green,    '',         '')
 call s:HL('Search',                         s:gray0,    s:yellow,   '')
 call s:HL('SpecialKey',                     s:gray3,    '',         '')
@@ -97,110 +96,103 @@ call s:HL('WarningMsg',                     s:red,      '',         '')
 call s:HL('WildMenu',                       s:gray0,    s:neonblue, '')
 
 " Generic Syntax
+call s:HL('Comment',                        s:gray3,    '',         'italic')
 call s:HL('Constant',                       s:red,      '',         '')
 call s:HL('String',                         s:green,    '',         '')
+call s:HL('Character',                      s:green,    '',         '')
+call s:HL('Number',                         s:red,      '',         '')
+call s:HL('Boolean',                        s:red,      '',         '')
+call s:HL('Float',                          s:red,      '',         '')
 call s:HL('Identifier',                     s:purple,   '',         'none')
 call s:HL('Function',                       s:yellow,   '',         '')
 call s:HL('Statement',                      s:blue,     '',         'none')
-call s:HL('Conditional',                    s:blue,     '',         '')
-call s:HL('Repeat',                         s:blue,     '',         '')
-call s:HL('Label',                          s:blue,     '',         '')
-call s:HL('Comment',                        s:gray3,    '',         'italic')
-call s:HL('Include',                        s:purple,   '',         '')
-call s:HL('Define',                         s:blue,     '',         'none')
-call s:HL('Macro',                          s:blue,     '',         '')
-call s:HL('PreCondit',                      s:purple,   '',         '')
-call s:HL('Special',                        s:cyan,     '',         '')
-call s:HL('Tag',                            s:green,    '',         '')
-call s:HL('SpecialComment',                 s:green,    '',         '')
-call s:HL('Debug',                          s:green,    '',         '')
-call s:HL('PreProc',                        s:cyan,     '',         '')
-call s:HL('Type',                           s:orange,   '',         'none')
 call s:HL('Operator',                       s:cyan,     '',         'none')
+call s:HL('PreProc',                        s:cyan,     '',         '')
+call s:HL('Define',                         s:blue,     '',         '')
+call s:HL('Macro',                          s:blue,     '',         '')
+call s:HL('Type',                           s:orange,   '',         'none')
+call s:HL('Structure',                      s:blue,     '',         '')
+call s:HL('Special',                        s:cyan,     '',         '')
+call s:HL('Error',                          s:red,      s:gray0,    'bold')
 call s:HL('Todo',                           s:pink,     s:gray0,    'bold')
-call s:HL('Underlined',                     s:yellow,   '',         '')
+
+" CSS/Sass/Less
+call s:HL('cssAttrComma',                   s:green,    '',         '')
+call s:HL('cssAttributeSelector',           s:green,    '',         '')
+call s:HL('cssBraces',                      s:gray4,    '',         '')
+call s:HL('cssClassName',                   s:orange,   '',         '')
+call s:HL('cssClassNameDot',                s:orange,   '',         '')
+call s:HL('cssIdentifier',                  s:yellow,   '',         '')
+call s:HL('cssImportant',                   s:purple,   '',         '')
+call s:HL('cssMediaType',                   s:purple,   '',         '')
+call s:HL('cssProp',                        s:gray4,    '',         '')
+call s:HL('cssSelectorOp',                  s:blue,     '',         '')
+call s:HL('cssSelectorOp2',                 s:blue,     '',         '')
+
+call s:HL('sassAmpersand',                  s:blue,     '',         '')
+call s:HL('sassClass',                      s:orange,   '',         '')
+call s:HL('sassClassChar',                  s:orange,   '',         '')
+
+call s:HL('lessAmpersand',                  s:blue,     '',         '')
+call s:HL('lessClass',                      s:orange,   '',         '')
+call s:HL('lessClassChar',                  s:orange,   '',         '')
+call s:HL('lessFunction',                   s:yellow,   '',         '')
+call s:HL('lessCssAttribute',               s:gray4,    '',         '')
+
+" Git
+call s:HL('gitcommitComment',               s:gray3,    '',         'italic')
+call s:HL('gitcommitOnBranch',              s:gray3,    '',         'italic')
+call s:HL('gitcommitFile',                  s:cyan,     '',         '')
+call s:HL('gitcommitHeader',                s:purple,   '',         '')
+call s:HL('gitcommitBranch',                s:orange,   '',         '')
+call s:HL('gitcommitUnmerged',              s:green,    '',         '')
+call s:HL('gitcommitUntrackedFile',         s:cyan,     '',         '')
+call s:HL('gitcommitSelectedFile',          s:green,    '',         '')
+call s:HL('gitcommitDiscardedFile',         s:red,      '',         '')
+call s:HL('gitcommitUnmergedFile',          s:yellow,   '',         '')
+call s:HL('gitcommitSelectedType',          s:green,    '',         '')
+call s:HL('gitcommitDiscardedType',         s:red,      '',         '')
+hi link gitcommitNoBranch       gitcommitBranch
+hi link gitcommitUntracked      gitcommitComment
+hi link gitcommitDiscarded      gitcommitComment
+hi link gitcommitSelected       gitcommitComment
+hi link gitcommitDiscardedArrow gitcommitDiscardedFile
+hi link gitcommitSelectedArrow  gitcommitSelectedFile
+hi link gitcommitUnmergedArrow  gitcommitUnmergedFile
 
 " HTML
-call s:HL('htmlArg',                        s:red,      '',         '')
-call s:HL('htmlEndTag',                     s:blue,     '',         '')
-call s:HL('htmlTag',                        s:blue,     '',         '')
-call s:HL('htmlTagName',                    s:purple,   '',         '')
+call s:HL('htmlArg',                        s:yellow,   '',         '')
+call s:HL('htmlEndTag',                     s:purple,   '',         '')
+call s:HL('htmlTag',                        s:purple,   '',         '')
+call s:HL('htmlTagName',                    s:blue,     '',         '')
+call s:HL('htmlTitle',                      s:gray4,    '',         '')
 
 " Javascript
-call s:HL('javaScriptIdentifier',           s:purple,   '',         '')
+call s:HL('javaScriptBraces',               s:gray4,    '',         '')
+call s:HL('javaScriptIdentifier',           s:blue,     '',         '')
 call s:HL('javaScriptFunction',             s:blue,     '',         '')
 call s:HL('javaScriptNumber',               s:red,      '',         '')
 call s:HL('javaScriptReserved',             s:blue,     '',         '')
 call s:HL('javaScriptRequire',              s:cyan,     '',         '')
 call s:HL('javaScriptNull',                 s:red,      '',         '')
 
-" CSS
-call s:HL('cssTagName',                     s:blue,     '',         '')
-call s:HL('cssClassName',                   s:yellow,   '',         '')
-call s:HL('cssDefinition',                  s:blue,     '',         '')
-call s:HL('cssFunctionName',                s:blue,     '',         '')
-call s:HL('cssIdentifier',                  s:orange,   '',         '')
-call s:HL('cssAtrributeSelector',           s:green,    '',         '')
-call s:HL('cssProp',                        s:orange,   '',         '')
-call s:HL('cssPseudoClassId',               s:red,      '',         '')
-call s:HL('cssFontAttr',                    s:cyan,     '',         '')
-call s:HL('cssImportant',                   s:cyan,     '',         '')
-call s:HL('cssIncludeKeyword',              s:purple,   '',         '')
-call s:HL('cssMediaType',                   s:cyan,     '',         '')
-call s:HL('cssBraces',                      s:gray4,    '',         '')
-call s:HL('cssSelectorOp',                  s:blue,     '',         '')
-call s:HL('cssSelectorOp2',                 s:cyan,     '',         '')
-
-" SaSS
-call s:HL('sassAmpersand',                  s:red,      '',         '')
-call s:HL('sassClass',                      s:yellow,   '',         '')
-call s:HL('sassFunction',                   s:blue,     '',         '')
-call s:HL('sassFor',                        s:blue,     '',         '')
-
 " Ruby
-call s:HL('rubyClass',                      s:blue,     '',         '')
-call s:HL('rubyKeyword',                    s:yellow,   '',         '')
-call s:HL('rubyRegexpSpecial',              s:yellow,   '',         '')
-call s:HL('rubyRegexp',                     s:cyan,     '',         '')
-call s:HL('rubyRegexpDelimiter',            s:gray4,    '',         '')
-call s:HL('rubyStringDelimiter',            s:green,    '',         '')
-call s:HL('rubyInterpolationDelimiter',     s:purple,   '',         '')
 call s:HL('rubyBlockParameterList',         s:purple,   '',         '')
+call s:HL('rubyInterpolationDelimiter',     s:purple,   '',         '')
+call s:HL('rubyStringDelimiter',            s:green,    '',         '')
+call s:HL('rubyRegexpSpecial',              s:cyan,     '',         '')
 
-" Git
-call s:HL('gitcommitSummary',               s:cyan,     '',         '')
-call s:HL('gitcommitComment',               s:gray3,    '',         'italic')
-call s:HL('gitcommitOnBranch',              '',         '',         'italic')
-call s:HL('gitcommitFile',                  s:cyan,     '',         '')
-call s:HL('gitcommitHeader',                s:purple,   '',         '')
-call s:HL('gitcommitBranch',                s:orange,   '',         '')
-call s:HL('gitcommitUnmerged',              s:green,    '',         '')
-call s:HL('gitcommitUntrackedFile',         s:blue,     '',         '')
-call s:HL('gitcommitSelectedFile',          s:green,    '',         '')
-call s:HL('gitcommitDiscardedFile',         s:red,      '',         '')
-call s:HL('gitcommitUnmergedFile',          s:yellow,   '',         '')
-call s:HL('gitcommitSelectedType',          s:green,    '',         '')
-call s:HL('gitcommitDiscardedType',         s:red,      '',         '')
-hi link gitcommitNoBranch           gitcommitBranch
-hi link gitcommitUntracked          gitcommitComment
-hi link gitcommitDiscarded          gitcommitComment
-hi link gitcommitSelected           gitcommitComment
-hi link gitcommitDiscardedArrow     gitcommitDiscardedFile
-hi link gitcommitSelectedArrow      gitcommitSelectedFile
-hi link gitcommitUnmergedArrow      gitcommitUnmergedFile
-hi link gitcommitFirstLine          gitcommitFile
+" Vim-Fugitive
+call s:HL('diffAdded',                      s:green,    '',         '')
+call s:HL('diffRemoved',                    s:red,      '',         '')
+
+" Vim-Gittgutter
+hi link GitGutterAdd    SignifySignAdd
+hi link GitGutterChange SignifySignChange
+hi link GitGutterDelete SignifySignDelete
+call s:HL('GitGutterChangeDelete',          s:orange,   '',         '')
 
 " Vim-Signify
 call s:HL('SignifySignAdd',                 s:green,    '',         '')
 call s:HL('SignifySignChange',              s:yellow,   '',         '')
 call s:HL('SignifySignDelete',              s:red,      '',         '')
-
-" Vim-Gitgutter
-hi link GitGutterAdd        SignifySignAdd
-hi link GitGutterChange     SignifySignChange
-hi link GitGutterDelete     SignifySignDelete
-call s:HL('GitGutterChangeDelete',          s:orange,   '',         '')
-
-" Vim-Fugitive
-call s:HL('diffAdded',                      s:green,    '',         '')
-call s:HL('diffRemoved',                    s:red,      '',         '')
