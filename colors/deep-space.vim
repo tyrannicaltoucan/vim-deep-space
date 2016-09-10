@@ -31,7 +31,7 @@ let s:yellow    = ['#b5a262', 143]
 let s:blue      = ['#608cc3', 67]
 let s:purple    = ['#8f72bf', 97]
 let s:cyan      = ['#56adb7', 73]
-let s:pink      = ['#b4749e', 168]
+let s:pink      = ['#c47ebd', 168]
 let s:orange    = ['#b3785d', 137]
 let s:neonblue  = ['#73a2e5', 75]
 
