@@ -1,9 +1,7 @@
-" -----------------------------------------------------------
-" Theme: deep-space
+" Deep Space - An intergalactically friendly Vim color scheme
 " Author: Brandon Siders <tyrannicaltoucan@gmail.com>
 " License: MIT
-" Version: 1.1
-" -----------------------------------------------------------
+" Version: 1.2-pre
 
 highlight clear
 
@@ -56,17 +54,17 @@ endfun
 
 " Editor Highlights
 call s:HL('ColorColumn',                    '',         s:gray3,    '')
-call s:HL('Cursor',                         '',         s:neonblue, '')
+call s:HL('Cursor',                         s:gray1,    s:neonblue, '')
 call s:HL('CursorColumn',                   '',         s:gray1,    '')
 call s:HL('CursorLine',                     '',         s:gray1,    'none')
 call s:HL('Directory',                      s:blue,     '',         '')
-call s:HL('DiffAdd',                        s:gray0,    s:green,    'none')
-call s:HL('DiffChange',                     s:gray0,    s:yellow,   'none')
-call s:HL('DiffDelete',                     s:gray0,    s:red,      'none')
-call s:HL('DiffText',                       s:gray0,    s:blue,     'none')
+call s:HL('DiffAdd',                        s:gray2,    s:green,    'none')
+call s:HL('DiffChange',                     s:gray2,    s:yellow,   'none')
+call s:HL('DiffDelete',                     s:gray2,    s:red,      'none')
+call s:HL('DiffText',                       s:gray2,    s:blue,     'none')
 call s:HL('ErrorMsg',                       s:red,      s:gray0,    'bold')
 call s:HL('VertSplit',                      s:gray3,    s:gray0,    'none')
-call s:HL('Folded',                         s:gray1,    s:gray0,    '')
+call s:HL('Folded',                         s:gray2,    s:gray0,    '')
 call s:HL('FoldColumn',                     s:cyan,     s:gray0,    '')
 call s:HL('SignColumn',                     s:gray1,    s:gray0,    '')
 call s:HL('LineNr',                         s:gray2,    '',         '')
@@ -77,7 +75,7 @@ call s:HL('MoreMsg',                        s:green,    '',         '')
 call s:HL('NonText',                        s:gray3,    '',         '')
 call s:HL('Normal',                         s:gray4,    s:gray0,    'none')
 call s:HL('Pmenu',                          s:gray4,    s:gray2,    '')
-call s:HL('PmenuSel',                       s:gray0,    s:neonblue, '')
+call s:HL('PmenuSel',                       s:gray1,    s:neonblue, '')
 call s:HL('PmenuSbar',                      s:gray2,    s:gray3,    '')
 call s:HL('PmenuThumb',                     s:gray3,    s:gray4,    '')
 call s:HL('Question',                       s:green,    '',         '')
@@ -87,22 +85,19 @@ call s:HL('SpellCap',                       s:blue,     '',         'undercurl')
 call s:HL('SpellBad',                       s:red,      '',         'undercurl')
 call s:HL('StatusLine',                     s:gray4,    s:gray2,    'none')
 call s:HL('StatusLineNC',                   s:gray1,    s:gray3,    '')
-call s:HL('TabLine',                        s:gray0,    s:gray3,    'none')
-call s:HL('TabLineFill',                    s:gray4,    s:gray2,    'none')
-call s:HL('TabLineSel',                     s:gray1,    s:neonblue, '')
-call s:HL('Title',                          s:yellow,   '',         '')
+call s:HL('TabLine',                        s:gray2,    s:gray0,    'none')
+call s:HL('TabLineFill',                    s:gray3,    s:gray1,    'none')
+call s:HL('TabLineSel',                     s:gray1,    s:gray3,    '')
+call s:HL('Title',                          s:yellow,   '',         'none')
 call s:HL('Visual',                         s:gray3,    s:gray1,    '')
 call s:HL('WarningMsg',                     s:red,      '',         '')
-call s:HL('WildMenu',                       s:gray0,    s:neonblue, '')
+call s:HL('WildMenu',                       s:gray1,    s:neonblue, '')
 
 " Generic Syntax
 call s:HL('Comment',                        s:gray3,    '',         'italic')
 call s:HL('Constant',                       s:red,      '',         '')
 call s:HL('String',                         s:green,    '',         '')
 call s:HL('Character',                      s:green,    '',         '')
-call s:HL('Number',                         s:red,      '',         '')
-call s:HL('Boolean',                        s:red,      '',         '')
-call s:HL('Float',                          s:red,      '',         '')
 call s:HL('Identifier',                     s:purple,   '',         'none')
 call s:HL('Function',                       s:yellow,   '',         '')
 call s:HL('Statement',                      s:blue,     '',         'none')
