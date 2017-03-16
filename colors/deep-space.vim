@@ -11,7 +11,7 @@ endif
 set background=dark
 let g:colors_name = 'deep-space'
 
-let g:deepspace_italics = get(g:, 'quantum_italics', 0)
+let g:deepspace_italics = get(g:, 'deepspace_italics', 0)
 
 " Color Palette
 let s:gray1     = '#1b202a'
