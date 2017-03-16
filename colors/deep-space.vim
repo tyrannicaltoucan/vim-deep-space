@@ -1,48 +1,46 @@
-" Deep Space - An intergalactically friendly color scheme
+" Deep Space - An intergalactically friendly color scheme for Vim
 " Author: Brandon Siders
 " License: MIT
-" Version: 1.2-pre
 
 highlight clear
-syntax reset
+
+if exists('syntax_on')
+    syntax reset
+endif
 
 set background=dark
 let g:colors_name = 'deep-space'
 
-if !exists('g:deepspace_italics')
-    let g:deepspace_italics = 0
-endif
+let g:deepspace_italics = get(g:, 'quantum_italics', 0)
 
-let s:gray1     = ['#1b202a', 234]
-let s:gray2     = ['#232936', 235]
-let s:gray3     = ['#323c4d', 237]
-let s:gray4     = ['#51617d', 243]
-let s:gray5     = ['#9aa7bd', 248]
-
-let s:red       = ['#b15e7c', 132]
-let s:green     = ['#709d6c', 65]
-let s:yellow    = ['#b5a262', 143]
-let s:blue      = ['#608cc3', 67]
-let s:purple    = ['#8f72bf', 97]
-let s:cyan      = ['#56adb7', 73]
-let s:orange    = ['#b3785d', 137]
-let s:pink      = ['#c47ebd', 168]
+" Color Palette
+let s:gray1     = '#1b202a'
+let s:gray2     = '#232936'
+let s:gray3     = '#323c4d'
+let s:gray4     = '#51617d'
+let s:gray5     = '#9aa7bd'
+let s:red       = '#b15e7c'
+let s:green     = '#709d6c'
+let s:yellow    = '#b5a262'
+let s:blue      = '#608cc3'
+let s:purple    = '#8f72bf'
+let s:cyan      = '#56adb7'
+let s:orange    = '#b3785d'
+let s:pink      = '#c47ebd'
 
 function! s:HL(group, fg, bg, attr)
     let l:attr = a:attr
-    if g:deepspace_italics == 0 && l:attr ==? 'italic'
+    if !g:deepspace_italics && l:attr ==# 'italic'
         let l:attr = 'none'
     endif
 
     if !empty(a:fg)
-        exec 'hi ' . a:group . ' guifg=' . a:fg[0] . ' ctermfg=' . a:fg[1]
+        exec 'hi ' . a:group . ' guifg=' . a:fg
     endif
-
     if !empty(a:bg)
-        exec 'hi ' . a:group . ' guibg=' . a:bg[0] . ' ctermbg=' . a:bg[1]
+        exec 'hi ' . a:group . ' guibg=' . a:bg
     endif
-
-    if l:attr != ''
+    if !empty(a:attr)
         exec 'hi ' . a:group . ' gui=' . l:attr . ' cterm=' . l:attr
     endif
 endfun
