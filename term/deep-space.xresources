@@ -1,0 +1,41 @@
+! Deep Space
+! TO INSTALL:
+! Add this to your ~/.Xresources or import this
+! by adding: #include "path/to/this/file"
+
+! special
+*.foreground:   #9aa4bd
+*.background:   #1b202a
+*.cursorColor:  #1b202a
+
+! black
+*.color0:       #1b202a
+*.color8:       #232936
+
+! red
+*.color1:       #b15e7c
+*.color9:       #b3785d
+
+! green
+*.color2:       #709d6c
+*.color10:      #709d6c
+
+! yellow
+*.color3:       #b5a262
+*.color11:      #d5b875
+
+! blue
+*.color4:       #608cc3
+*.color12:      #608cc3
+
+! purple
+*.color5:       #8f72bf
+*.color13:      #c47ebd
+
+! cyan
+*.color6:       #56adb7
+*.color14:      #51617d
+
+! white
+*.color7:       #323c4d
+*.color15:      #9aa7bd
