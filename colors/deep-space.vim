@@ -12,6 +12,7 @@ set background=dark
 let g:colors_name = 'deep-space'
 
 let g:deepspace_italics = get(g:, 'deepspace_italics', 0)
+let g:deepspace_transparent = get(g:, 'deepspace_transparent', 0)
 
 " Color Palette
 let s:gray1     = '#1b202a'
@@ -185,6 +186,10 @@ call s:HL('GitGutterChangeDelete',          s:orange,   '',         '')
 call s:HL('SignifySignAdd',                 s:green,    '',         '')
 call s:HL('SignifySignChange',              s:yellow,   '',         '')
 call s:HL('SignifySignDelete',              s:red,      '',         '')
+
+if g:deepspace_transparent
+  exec 'hi! Normal guibg=NONE ctermbg=NONE'
+endif
 
 if has("nvim") && exists("&termguicolors") && &termguicolors
     let g:terminal_color_0  = "#1b202a"
