@@ -1,0 +1,57 @@
+*deep-space.txt*			Last change: 2019 Oct 25
+
+
+	      vim-deep-space - Colorscheme by Brandon Siders~
+
+
+					 *vim-deep-space* *deep-space*
+An intergalactically friendly color scheme based off of Hybrid.
+https://github.com/w0ng/vim-hybrid
+
+Note: Deep Space requires a terminal or GUI that supports true-colors!
+
+For screenshots, updates and more details please visit:
+https://github.com/tyrannicaltoucan/vim-deep-space
+
+1. Installation				|deep-space-install|
+2. Options			    	|deep-space-options|
+3. Airline and lightline Themes		|deep-space-statusline|
+
+==============================================================================
+1. Install						*deep-space-install*
+
+Install this color scheme using |packages| or your preferred Vim plugin
+manager, then add the following to your vim configuration file: >
+
+	set background=dark
+	set termguicolors
+	colorscheme deep-space
+<
+==============================================================================
+2. Options						*deep-space-options*
+
+Note: Configure all options before setting `:colorscheme`.
+
+ *g:deepspace_italics*		{boolean} Default: 0
+				Enable italics, if your terminal supports it. >
+				    let g:deepspace_italics = 1
+<
+==============================================================================
+3. Airline and lightline Themes				*deep-space-statusline*
+				     *deep-space-airline* *deep-space-lightline*
+
+Deep Space has themes for both |Airline| as well as |lightline|. Install the
+statusbar of your choice then set the theme in your vim config.
+
+Airline: >
+	let g:airline_theme = 'deep_space'
+<
+lightline: >
+	let g:lightline = {
+	      \ 'colorscheme': 'deepspace',
+	      \ }
+<
+ - Airline:   https://github.com/vim-airline/vim-airline
+ - lightline: https://github.com/itchyny/lightline.vim
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
